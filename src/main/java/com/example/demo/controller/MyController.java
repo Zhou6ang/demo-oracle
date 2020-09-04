@@ -19,7 +19,7 @@ public class MyController {
 
   @PostMapping("/sql")
   public Object executer(@RequestBody String body){
-    if(body != null && !body.isBlank()) {
+    if(body != null && !body.isEmpty()) {
       logger.info(body);
       Object obj = myService.executSQL(body);
       logger.info("result: {}",obj);
